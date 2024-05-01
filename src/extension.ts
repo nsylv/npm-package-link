@@ -19,7 +19,9 @@ export async function activate(context: vscode.ExtensionContext) {
 
   const selectedText = editor.document.getText(selection);
 
-  console.log(selectedText);
+  vscode.env.openExternal(
+    vscode.Uri.parse(`https://www.npmjs.com/package/${selectedText}`)
+  );
 }
 
 // This method is called when your extension is deactivated
