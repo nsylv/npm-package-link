@@ -14,15 +14,14 @@
   "contributes": {
     "commands": [
       {
-        "command": "npm-package-link.helloWorld",
-        "title": "Hello World"
+        "command": "npm-package-link.openNpm",
+        "title": "Open NPM"
       }
     ],
     "menus": {
       "editor/context": [
         {
-          "command": "npm-package-link.helloWorld",
-          "label": "Show Options",
+          "command": "npm-package-link.openNpm",
           "context": "editorContext",
           "when": "resourceFilename == package.json"
         }
