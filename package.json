@@ -17,7 +17,17 @@
         "command": "npm-package-link.helloWorld",
         "title": "Hello World"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "npm-package-link.helloWorld",
+          "label": "Show Options",
+          "context": "editorContext",
+          "when": "resourceFilename == package.json"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
