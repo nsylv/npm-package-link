@@ -1,6 +1,10 @@
 {
   "name": "npm-package-link",
   "displayName": "npm-package-link",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nsylv/npm-package-link.git"
+  },
   "description": "",
   "version": "0.0.1",
   "engines": {
