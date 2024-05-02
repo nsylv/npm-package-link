@@ -4,7 +4,7 @@ A small package for quick linking to the NPM site for a given package
 
 ## Features
 
-<!-- TODO screen recording -->
+\!\[New Context Menu Option\]\(images/context-menu-option.mov\)
 
 Adds a context menu option in `package.json` files that links to the highlighted package's NPM page
 
