@@ -5,23 +5,30 @@ import * as vscode from "vscode";
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export async function activate(context: vscode.ExtensionContext) {
-  const editor = await vscode.window.activeTextEditor;
+  let disposable = vscode.commands.registerCommand(
+    "npm-package-link.openNpm",
+    async () => {
+      const editor = await vscode.window.activeTextEditor;
 
-  if (!editor) {
-    return;
-  }
+      if (!editor) {
+        return;
+      }
 
-  const selection = editor.selection;
+      const selection = editor.selection;
 
-  if (!selection) {
-    return;
-  }
+      if (!selection) {
+        return;
+      }
 
-  const selectedText = editor.document.getText(selection);
+      const selectedText = editor.document.getText(selection);
 
-  vscode.env.openExternal(
-    vscode.Uri.parse(`https://www.npmjs.com/package/${selectedText}`)
+      vscode.env.openExternal(
+        vscode.Uri.parse(`https://www.npmjs.com/package/${selectedText}`)
+      );
+    }
   );
+
+  context.subscriptions.push(disposable);
 }
 
 // This method is called when your extension is deactivated
